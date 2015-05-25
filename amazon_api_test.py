@@ -10,7 +10,7 @@ amazon = AmazonAPI(str(config['AWS_ACCESS_KEY_ID']),
                    str(config['AWS_ASSOCIATE_TAG']),
                    region='US')
 
-results = amazon.search(Author='Terry Pratchett',
+results = amazon.search(Author='ben aaronovitch',
                         Sort='-publication_date',
                         SearchIndex='Books')
 
@@ -20,5 +20,7 @@ for item in results:
             print item.title
             print item.publication_date
             print item.offer_url
+            print item.authors
+            print item.isbn
     else:
         break
